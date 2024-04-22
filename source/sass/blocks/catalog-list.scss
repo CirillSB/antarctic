@@ -1,0 +1,68 @@
+.catalog-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-column-gap: calc(30 / 1160 * 100%);
+  grid-row-gap: 30px;
+  grid-auto-flow: row;
+
+  @include vp-1279 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include vp-1023 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-column-gap: calc(30 / 663 * 100%);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, auto);
+  }
+}
+
+.catalog-list__item {
+  position: relative;
+  width: 100%;
+
+  p {
+    position: absolute;
+    bottom: 22px;
+    left: 30px;
+    margin: 0;
+    font-family: $ff-links;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: $color-BlackSqueeze;
+
+    @include vp-1023 {
+      bottom: 27px;
+      left: 35px;
+    }
+
+    @include vp-767 {
+      bottom: 17px;
+      left: 25px;
+    }
+  }
+
+  @include hover-focus {
+    @media (hover: hover) {
+      &:hover:not(.focus-visible) {
+        .card {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    &.focus-visible:focus {
+      .card {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.map {
+  width: 100%;
+  height: 306px;
+  background-color: $color-QuarterSpanishWhite;
+  background-image: url("../img/map.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include vp-1023 {
+    height: 335px;
+  }
+
+  @include vp-767 {
+    height: 316px;
+  }
+}
+
+.map.lazy {
+  background-image: none;
+}

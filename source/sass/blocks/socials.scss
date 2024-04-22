@@ -1,0 +1,48 @@
+.socials__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-auto-flow: row;
+  grid-column-gap: 27px;
+  grid-row-gap: 10px;
+
+  @include vp-1023 {
+    grid-column-gap: 18px;
+    position: relative;
+    top: 0;
+    left: 1px;
+  }
+
+  @include vp-767 {
+    top: -2px;
+    left: -1px;
+  }
+}
+
+.socials__item {
+  display: grid;
+}
+
+.socials__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+  @include hover {
+    @media (hover: hover) {
+      &:hover:not(.focus-visible) {
+        border-radius: 3%;
+        outline: 3px solid $color-BlackSqueeze;
+      }
+    }
+  }
+}
+
+.socials__svg {
+  @include vp-1023 {
+    transform: scale(0.8);
+  }
+}
